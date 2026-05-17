@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAMALcity.pokahh | Precision Poker Visualizer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- GLOBAL THEME --- */
+        :root {
+            --bg-color: #0E1117;
+            --surface-color: #1E1E1E;
+            --primary-yellow: #FFD700;
+            --primary-yellow-hover: #E6C200;
+            --text-main: #FFFFFF;
+            --text-muted: #A9A9A9;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(14, 17, 23, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+            text-decoration: none;
+        }
+        .brand-logo {
+            width: 50px; 
+            height: 50px;
+            border-radius: 50%; 
+        }
+        .brand-text {
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 24px;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+        .brand-text span {
+            color: var(--primary-yellow); 
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-main {
+            background-color: var(--primary-yellow);
+            color: black;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn-main:hover {
+            background-color: var(--primary-yellow-hover);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 5%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .quote {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-yellow);
+            padding-left: 20px;
+            text-align: left;
+            display: inline-block;
+            line-height: 1.6;
+        }
+        .quote strong {
+            color: var(--text-main);
+        }
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary-yellow);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .split-text { flex: 1; font-size: 18px; line-height: 1.7; color: var(--text-muted); }
+        .split-image { 
+            flex: 1; 
+            background-color: var(--surface-color);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .split-image img { width: 100%; border-radius: 5px; }
+
+        /* --- BLOG GRID --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .blog-card {
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-yellow);
+        }
+        .blog-title { font-size: 22px; font-weight: 700; margin: 0 0 15px 0; color: var(--text-main); }
+        .blog-excerpt { color: var(--text-muted); font-size: 15px; line-height: 1.6; flex-grow: 1; }
+        .read-more { color: var(--primary-yellow); text-decoration: none; font-weight: 600; margin-top: 15px; display: inline-block; }
+        
+        .blog-disclaimer {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--surface-color);
+            color: var(--text-muted);
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .split-layout { flex-direction: column; }
+            .hero h1 { font-size: 36px; }
+            .nav-links { display: none; } 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="brand-container">
+            <img src="logo.jpg" alt="YAMALcity Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/50?text=LOGO'">
+            <div class="brand-text">YAMALcity<span>.pokahh</span></div>
+        </a>
+        <div class="nav-links">
+            <a href="#about">The Story</a>
+            <a href="#blog">Strategy Hub</a>
+            <!-- LATER: Paste your Streamlit link in the href below -->
+            <a href="#" target="_blank" class="btn-main">Launch App</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="quote">
+            "Why do you think the same five guys make it to the final table of the World Series of Poker EVERY YEAR? What, are they the luckiest guys in Las Vegas? <strong>It's a skill game.</strong>"
+        </div>
+        <h1>Stop Playing Your Hand.<br>Start Playing The Grid.</h1>
+        <p>If you can’t spot the range advantage in the first half-hour at the table... you don't have it. Poker isn't a guessing game; it's a math equation. YAMALcity.pokahh strips away the gut feelings and shows you the hard truth. Input the scenario, visualize the equities, and see exactly how your cards play against their entire range, street by street.</p>
+        
+        <!-- LATER: Paste your Streamlit link in the href below -->
+        <a href="#" target="_blank" class="btn-main" style="font-size: 20px; padding: 15px 35px;">Launch Free Calculator</a>
+    </div>
+
+    <!-- ABOUT / ORIGIN STORY SECTION -->
+    <section id="about">
+        <h2>THE ORIGIN STORY</h2>
+        <div class="split-layout">
+            <div class="split-text">
+                <p>The idea sparked during a local house game while I was studying Data Analytics. I wondered: <em>Is it possible to build a tool that visualizes opponent ranges in a full-ring heads-up matchup, assuming perfect strategy, and updates street-by-street without manual input every time?</em></p>
+                <p>Of course, humans rarely play a 100% perfect GTO calling or betting range. But that isn't the point. The point is to establish a baseline to learn from.</p>
+                <p>Armed with modern data tools, AI, and a deep love for poker, I built the prototype as a Coding School project. It worked so well that my professor encouraged me to keep developing it. Today, YAMALcity allows you to run random practice scenarios or input completely custom ranges so you can visualize exactly how to exploit your opponents.</p>
+            </div>
+            <div class="split-image">
+                <img src="screenshot.png" alt="App Screenshot" onerror="this.src='https://via.placeholder.com/600x400/1E1E1E/FFD700?text=Screenshot+of+App+Here'">
+                <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted);"><i>The YAMALcity Post-Flop Visualizer</i></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog">
+        <h2>STRATEGY HUB</h2>
+        <div class="blog-grid">
+            
+            <!-- Blog Post 1 -->
+            <div class="blog-card">
+                <h3 class="blog-title">Building a Great Life Around Poker</h3>
+                <p class="blog-excerpt">In <em>Ace on the River</em>, Barry Greenstein highlights that he slept while others worked. The ultimate takeaway? To be a truly great player, you must be rested, educated, and most importantly, build a great life around poker, not just at the table.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card">
+                <h3 class="blog-title">The 2% & 6% Bankroll Rules</h3>
+                <p class="blog-excerpt">Drawing from <em>Come Into My Trading Room</em>, we apply day-trading logic to poker. Never risk more than 2% of your bankroll on a single game. If you hit a 6% drawdown in a month? Stop playing immediately and spend the rest of the month studying.</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card">
+                <h3 class="blog-title">Scaling Up: Snowballs & Stakes</h3>
+                <p class="blog-excerpt">From <em>The $100 Startup</em>, think of your bankroll as a snowball. Do you roll one massive snowball by aggressively moving up in stakes (vertical scaling)? Or do you build multiple smaller ones to lower variance (horizontal scaling)?</p>
+                <a href="#" class="read-more">Read Article →</a>
+            </div>
+
+        </div>
+        <p class="blog-disclaimer">*These are just small snippets of the strategy concepts we use. Full articles dropping soon.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 YAMALcity.pokahh. All rights reserved. | <a href="#" style="color: var(--primary-yellow); text-decoration: none;">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
