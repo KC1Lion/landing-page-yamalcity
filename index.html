@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAMALcity.pokahh | Precision Poker Visualizer</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Media Logos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
         /* --- GLOBAL THEME --- */
@@ -188,14 +192,49 @@
             font-size: 16px;
         }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER & SOCIALS --- */
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 50px 20px 30px;
             background-color: var(--surface-color);
             color: var(--text-muted);
             margin-top: 50px;
             border-top: 1px solid #333;
+        }
+        
+        .social-heading {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            font-size: 26px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-yellow);
+            transform: translateY(-4px); /* Gentle bounce effect */
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -216,7 +255,6 @@
         <div class="nav-links">
             <a href="#about">The Story</a>
             <a href="#blog">Strategy Hub</a>
-            <!-- LATER: Paste your Streamlit link in the href below -->
             <a href="https://yamalcity.streamlit.app" target="_blank" class="btn-main">Launch App</a>
         </div>
     </nav>
@@ -229,7 +267,6 @@
         <h1>Stop Playing Your Hand.<br>Start Playing The Grid.</h1>
         <p>If you can’t spot the range advantage in the first half-hour at the table... you don't have it. Poker isn't a guessing game; it's a math equation. YAMALcity.pokahh strips away the gut feelings and shows you the hard truth. Input the scenario, visualize the equities, and see exactly how your cards play against their entire range, street by street.</p>
         
-        <!-- LATER: Paste your Streamlit link in the href below -->
         <a href="https://yamalcity.streamlit.app" target="_blank" class="btn-main" style="font-size: 20px; padding: 15px 35px;">Launch Free Calculator</a>
     </div>
 
@@ -254,21 +291,18 @@
         <h2>STRATEGY HUB</h2>
         <div class="blog-grid">
             
-            <!-- Blog Post 1 -->
             <div class="blog-card">
                 <h3 class="blog-title">Building a Great Life Around Poker</h3>
                 <p class="blog-excerpt">In <em>Ace on the River</em>, Barry Greenstein highlights that he slept while others worked. The ultimate takeaway? To be a truly great player, you must be rested, educated, and most importantly, build a great life around poker, not just at the table.</p>
                 <a href="#" class="read-more">Read Article →</a>
             </div>
 
-            <!-- Blog Post 2 -->
             <div class="blog-card">
                 <h3 class="blog-title">The 2% & 6% Bankroll Rules</h3>
                 <p class="blog-excerpt">Drawing from <em>Come Into My Trading Room</em>, we apply day-trading logic to poker. Never risk more than 2% of your bankroll on a single game. If you hit a 6% drawdown in a month? Stop playing immediately and spend the rest of the month studying.</p>
                 <a href="#" class="read-more">Read Article →</a>
             </div>
 
-            <!-- Blog Post 3 -->
             <div class="blog-card">
                 <h3 class="blog-title">Scaling Up: Snowballs & Stakes</h3>
                 <p class="blog-excerpt">From <em>The $100 Startup</em>, think of your bankroll as a snowball. Do you roll one massive snowball by aggressively moving up in stakes (vertical scaling)? Or do you build multiple smaller ones to lower variance (horizontal scaling)?</p>
@@ -279,9 +313,27 @@
         <p class="blog-disclaimer">*These are just small snippets of the strategy concepts we use. Full articles dropping soon.</p>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH SOCIALS -->
     <footer>
-        <p>&copy; 2026 YAMALcity.pokahh. All rights reserved. | <a href="#" style="color: var(--primary-yellow); text-decoration: none;">Privacy Policy</a></p>
+        <div class="social-heading">CONNECT WITH US</div>
+        <div class="social-icons">
+            <!-- Instagram -->
+            <a href="https://instagram.com/yamalcity.pokahh" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            
+            <!-- X (Twitter) -->
+            <a href="https://x.com/yamalcity" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            
+            <!-- Email -->
+            <a href="mailto:yamalcity@outlook.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            
+            <!-- UNCOMMENT THESE WHEN YOU MAKE FACEBOOK & YOUTUBE -->
+            <!-- <a href="YOUR_FACEBOOK_LINK_HERE" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a> -->
+            <!-- <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a> -->
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 YAMALcity.pokahh. All rights reserved. | <a href="#" style="color: var(--primary-yellow); text-decoration: none;">Privacy Policy</a></p>
+        </div>
     </footer>
 
 </body>
