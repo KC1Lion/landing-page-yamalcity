@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rookie Smarts | YAMALcity.pokahh</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* --- GLOBAL THEME --- */
+        :root {
+            --bg-color: #0E1117;
+            --surface-color: #1E1E1E;
+            --primary-yellow: #FFD700;
+            --primary-yellow-hover: #E6C200;
+            --text-main: #FFFFFF;
+            --text-muted: #A9A9A9;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(14, 17, 23, 0.95);
+            border-bottom: 1px solid #333;
+        }
+        .brand-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .brand-logo { width: 50px; height: 50px; border-radius: 50%; }
+        .brand-text { font-family: 'Orbitron', sans-serif; font-size: 24px; color: var(--text-main); letter-spacing: 2px; }
+        .brand-text span { color: var(--primary-yellow); }
+        .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-yellow); }
+        .btn-main { background-color: var(--primary-yellow); color: black; padding: 12px 24px; font-size: 16px; font-weight: 800; border-radius: 5px; text-decoration: none; transition: 0.3s; }
+        .btn-main:hover { background-color: var(--primary-yellow-hover); }
+
+        /* --- BLOG ARTICLE STYLING --- */
+        .article-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .back-link {
+            display: inline-block;
+            color: var(--primary-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        
+        .article-date {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .article-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            color: var(--primary-yellow);
+            margin: 0 0 40px 0;
+            line-height: 1.2;
+        }
+        .article-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+        .article-content h3 {
+            font-size: 24px;
+            color: var(--text-main);
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        .article-content ul {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        blockquote {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text-main);
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-yellow);
+            padding-left: 20px;
+            background-color: var(--surface-color);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px 20px 30px;
+            background-color: var(--surface-color);
+            color: var(--text-muted);
+            border-top: 1px solid #333;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html" class="brand-container">
+            <img src="logo.JPG" alt="YAMALcity Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/50?text=LOGO'">
+            <div class="brand-text">YAMALcity<span>.pokahh</span></div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#about">The Story</a>
+            <!-- UPDATED THIS LINK -->
+            <a href="strategy-hub.html">Strategy Hub</a>
+            <a href="https://yamalcity.streamlit.app" target="_blank" class="btn-main">Launch App</a>
+        </div>
+    </nav>
+
+    <!-- ARTICLE CONTENT -->
+    <div class="article-container">
+        <!-- UPDATED THIS LINK -->
+        <a href="strategy-hub.html" class="back-link">← Back to Strategy Hub</a>
+        
+        <div class="article-date">Sunday, 21 June 2026</div>
+        <h1 class="article-title">ROOKIE SMARTS: Why The Best Poker Players Never Stop Learning</h1>
+        
+        <div class="article-content">
+            <blockquote>"Art should be an act of every individual willing to say something new and that which is not quite familiar."</blockquote>
+            
+            <p>That quote by Maya Lin is featured in Liz Wiseman’s book, <em>Rookie Smarts</em>. They are incredibly encouraging words for someone at the start of a new journey—like the creation of the YAMALcity.pokahh brand. But today is less about our origins, and more about the valuable lessons hidden in those pages.</p>
+            
+            <h3>The Calculated Predator</h3>
+            <p>In his Masterclass, poker pro Charlie Carrel mentioned that in order to become a successful poker player, one has to become a "predator." But what does that actually mean? Is it fighting to win a hand no matter the cost?</p>
+            
+            <p>If we look at Liz Wiseman’s book—and the brilliant minds she references—we find a different approach. Malcolm Gladwell once said:</p>
+            
+            <blockquote>"The truly successful businessman is anything but a risk-taker. He is a predator, and predators seek to incur the least risk possible while hunting."</blockquote>
+            
+            <p>That paints a very different picture of the poker table, doesn't it? Poker isn't about blind risk; it is about calculated hunting.</p>
+            
+            <h3>Rookies vs. Veterans</h3>
+            <p>This brings us to the core of <em>Rookie Smarts</em>. The book compares two types of people: rookies and veterans. In poker (and in life), it turns out they go hand in hand. To keep getting better, you have to constantly shift from one mindset to the other.</p>
+            
+            <ul>
+                <li><strong>The Veteran Mindset:</strong> Veterans are like chess grandmasters; they think one or two moves ahead, maybe even half a game ahead. They are also like marathon runners, keeping a steady pace because they know their ultimate target. Wiseman points out that the best leaders (and veterans) know exactly when to stop.</li>
+                <li><strong>The Rookie Mindset:</strong> The whole point of <em>Rookie Smarts</em> is that to generate new ideas, we must be willing to become rookies again and start from scratch. Rookies are constantly in a state of learning. As Liz Wiseman notes, there is immense hope in adults who continue to learn. As the old saying goes: <em>use it or lose it.</em></li>
+            </ul>
+            
+            <p>To become a rookie again, you have to seek help. You have to find mentors, take courses, or learn from the "eminent dead" (a great phrase used by Charles T. Munger).</p>
+            
+            <h3>The Power of the Break</h3>
+            <p>Because veterans understand big-picture cycles and "know when to stop," one of the best ways to hit the reset button and get your rookie learning mindset back is to step away.</p>
+            
+            <p>Take a break from the game for a whole summer. As Drake sang: <em>"Work all winter, shine all summer."</em> Use that time to study, reset, and expand your mind. (Speaking of stepping away, an even more extreme idea on this topic came from another book, but I have to save that for the next blog post. A little teaser about bankroll and risk management never hurt anybody!)</p>
+            
+            <h3>Expanding the Limits</h3>
+            <p>Before we wrap up, it is always stunning to hear the answer to the iconic question posed by poker legend Mike Sexton: <em>What is the point of poker?</em></p>
+            
+            <p>His answer? <strong>"To improve one's quality of life."</strong></p>
+            
+            <p>Simple, yet incredibly powerful words. Poker is a vehicle for growth. By constantly bouncing between the veteran's execution and the rookie's hunger to learn, we push our boundaries. I'll leave you with two final quotes to think about during your next session:</p>
+            
+            <blockquote>"That which we persist in doing becomes easy to do; not that the nature of the thing has changed, but that our power to do has increased." <br>— Ralph Waldo Emerson / Heber J. Grant</blockquote>
+            
+            <blockquote>"The more you go to your limits, the more your limits will expand." <br>— Robin Sharma</blockquote>
+            
+            <p>Keep pushing your limits, stay hungry like a rookie, and start playing the grid.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 YAMALcity.pokahh. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
